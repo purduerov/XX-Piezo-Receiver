@@ -9147,40 +9147,6 @@ NS Package M08A</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="supply2" urn="urn:adsk.eagle:library:372">
-<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
-GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
-Please keep in mind, that these devices are necessary for the
-automatic wiring of the supply signals.&lt;p&gt;
-The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
-In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="V+" urn="urn:adsk.eagle:symbol:27026/1" library_version="2">
-<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<text x="-1.27" y="1.27" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="V+" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="V+" urn="urn:adsk.eagle:component:27074/1" prefix="SUPPLY" library_version="2">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="1" symbol="V+" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9203,8 +9169,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="PIEZO-2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDA" device="" value="PIEZO-"/>
 <part name="IC1" library="linear3" deviceset="TL072" device="D"/>
 <part name="IC2" library="linear3" deviceset="TL072" device="D"/>
-<part name="V-" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device="" value="V-"/>
-<part name="V+" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9228,37 +9192,13 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="PIEZO-1" gate="1" x="15.24" y="66.04"/>
 <instance part="PIEZO-2" gate="1" x="55.88" y="66.04"/>
 <instance part="IC1" gate="A" x="27.94" y="60.96"/>
-<instance part="IC1" gate="B" x="5.08" y="104.14"/>
+<instance part="IC1" gate="B" x="3.81" y="105.41"/>
 <instance part="IC2" gate="A" x="68.58" y="63.5"/>
-<instance part="IC2" gate="B" x="27.94" y="105.41"/>
-<instance part="V-" gate="1" x="11.43" y="85.09"/>
-<instance part="V+" gate="1" x="-17.78" y="85.09"/>
+<instance part="IC2" gate="B" x="29.21" y="105.41"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GNDA" class="0">
-<segment>
-<pinref part="J2" gate="A" pin="5"/>
-<wire x1="-7.62" y1="76.2" x2="-16.51" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-16.51" y1="76.2" x2="-16.51" y2="72.39" width="0.1524" layer="91"/>
-<pinref part="PIEZO-" gate="1" pin="GNDA"/>
-</segment>
-<segment>
-<wire x1="15.24" y1="68.58" x2="15.24" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="71.12" x2="20.32" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="71.12" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="PIEZO-1" gate="1" pin="GNDA"/>
-<pinref part="IC1" gate="A" pin="+IN"/>
-</segment>
-<segment>
-<wire x1="55.88" y1="68.58" x2="55.88" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="71.12" x2="60.96" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="71.12" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="PIEZO-2" gate="1" pin="GNDA"/>
-<pinref part="IC2" gate="A" pin="+IN"/>
-</segment>
-</net>
 <net name="PIEZO+2" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
@@ -9275,12 +9215,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="68.58" y1="50.8" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="50.8" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="A" pin="OUT"/>
 <wire x1="76.2" y1="63.5" x2="96.52" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="63.5" x2="96.52" y2="71.12" width="0.1524" layer="91"/>
-<junction x="76.2" y="63.5"/>
 <pinref part="U1" gate="A" pin="PA0"/>
 <wire x1="96.52" y1="71.12" x2="105.41" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="OUT"/>
+<junction x="76.2" y="63.5"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -9372,18 +9312,26 @@ In this library the device names are the same as the pin names of the symbols, t
 <junction x="35.56" y="60.96"/>
 </segment>
 </net>
-<net name="V+" class="0">
+<net name="PIEZO-" class="0">
 <segment>
-<pinref part="J2" gate="A" pin="2"/>
-<pinref part="V-" gate="1" pin="V+"/>
-<wire x1="0" y1="81.28" x2="11.43" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="11.43" y1="81.28" x2="11.43" y2="82.55" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="68.58" x2="15.24" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="71.12" x2="20.32" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="71.12" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="PIEZO-1" gate="1" pin="GNDA"/>
+<pinref part="IC1" gate="A" pin="+IN"/>
 </segment>
 <segment>
-<pinref part="J2" gate="A" pin="1"/>
-<pinref part="V+" gate="1" pin="V+"/>
-<wire x1="-7.62" y1="81.28" x2="-17.78" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="-17.78" y1="81.28" x2="-17.78" y2="82.55" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="68.58" x2="55.88" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="71.12" x2="60.96" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="71.12" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="PIEZO-2" gate="1" pin="GNDA"/>
+<pinref part="IC2" gate="A" pin="+IN"/>
+</segment>
+<segment>
+<pinref part="J2" gate="A" pin="5"/>
+<wire x1="-7.62" y1="76.2" x2="-16.51" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-16.51" y1="76.2" x2="-16.51" y2="72.39" width="0.1524" layer="91"/>
+<pinref part="PIEZO-" gate="1" pin="GNDA"/>
 </segment>
 </net>
 </nets>
